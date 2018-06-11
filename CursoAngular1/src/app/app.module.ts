@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { RopaService } from './services/ropa.service';
 import { ConversorPipe } from './pipes/conversor.pipe';
+import { CochesComponent } from './coches/coches.component';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
@@ -18,7 +19,8 @@ const appRoutes:Routes=[
   {path:'fruta',component:FrutaComponent},            
   {path:'contacto',component:ContactoComponent},
   {path:'contacto/:page',component:ContactoComponent},
-  {path:'home',component:HomeComponent},            
+  {path:'home',component:HomeComponent},
+  {path:'coches',component:CochesComponent},            
   {path:'**',component:HomeComponent},
 ];
 
@@ -29,7 +31,8 @@ const appRoutes:Routes=[
     EmpleadoComponent,
     HomeComponent,
     ContactoComponent,
-    ConversorPipe
+    ConversorPipe,
+    CochesComponent
   ],
   imports: [
     BrowserModule,
