@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h3>{{title}}</h3>
+<hr>
+<nav>
+    <a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a>|
+    <a [routerLink]="['/fruta']" [routerLinkActive]="['activado']">Fruta</a>|
+    <a [routerLink]="['/empleado']" [routerLinkActive]="['activado']">Empleado</a>|
+    <a [routerLink]="['/contacto']" [routerLinkActive]="['activado']">Contacto</a>|
+</nav>
+<hr>
+<!-- <app-fruta></app-fruta> -->
+<!-- <app-empleado></app-empleado> -->
+<router-outlet></router-outlet>
