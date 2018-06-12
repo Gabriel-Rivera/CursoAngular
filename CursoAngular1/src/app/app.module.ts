@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpModule} from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { RopaService } from './services/ropa.service';
 import { ConversorPipe } from './pipes/conversor.pipe';
 import { CochesComponent } from './coches/coches.component';
+import { PlantillasComponent } from './plantillas/plantillas.component';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
@@ -20,7 +22,8 @@ const appRoutes:Routes=[
   {path:'contacto',component:ContactoComponent},
   {path:'contacto/:page',component:ContactoComponent},
   {path:'home',component:HomeComponent},
-  {path:'coches',component:CochesComponent},            
+  {path:'coches',component:CochesComponent},     
+  {path:'plantillas',component:PlantillasComponent},                   
   {path:'**',component:HomeComponent},
 ];
 
@@ -32,12 +35,14 @@ const appRoutes:Routes=[
     HomeComponent,
     ContactoComponent,
     ConversorPipe,
-    CochesComponent
+    CochesComponent,
+    PlantillasComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpModule
   ],
   providers: [RopaService],
   bootstrap: [AppComponent]

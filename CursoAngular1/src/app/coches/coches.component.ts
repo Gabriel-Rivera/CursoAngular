@@ -9,27 +9,34 @@ import { PeticionesService } from '../services/peticiones.service';
 })
 export class CochesComponent implements OnInit {
 
-  coche : Coche;
-  coches:Array<Coche>;  
+  coche: Coche;
+  coches: Array<Coche>;
+  articulos;
 
   constructor(
-            private _peticiones:PeticionesService)
-             {
-    this.coches =[
-      new Coche('Seat',234,'Azul'),
-      new Coche('Fiesta',234,'Verde')
+    private _peticiones: PeticionesService) {
+    this.coches = [
+      new Coche('Seat', 234, 'Azul'),
+      new Coche('Fiesta', 234, 'Verde')
     ]
-    this.coche = new Coche('',0,'');
+    this.coche = new Coche('', 0, '');
 
-   }
-
-  ngOnInit() {
-    console.log(this._peticiones.getPrueba());
   }
 
-  onSubmit(){
-    this.coches.push(this.coche);
-    this.coche = new Coche('',0,'');
+  ngOnInit() {
+    this._peticiones.getArticulos().subscribe(
+      result => {
+        this.articulos = result;
+      },
+      error => {
+        var errorMessage = <any>error;
+        console.log(errorMessage)
+      }
+    )
+  }
 
+  onSubmit() {
+    this.coches.push(this.coche);
+    this.coche = new Coche('', 0, '');
   }
 }
